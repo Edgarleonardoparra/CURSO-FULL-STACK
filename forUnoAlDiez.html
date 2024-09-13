@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular automáticamente al ingresar datos</title>
+    <script>
+        // del 1 al 10
+        function ejecutarForUnoAlDiez(inicio, fin) {
+            var valor1 = inicio;
+            var valor2 = fin;
+
+            for (let valor1 = 1; valor1 <= valor2; valor1++) {
+                console.log(valor1);
+            }
+        }
+        ejecutarForUnoAlDiez (1,10)
+
+        // del 10 al 1
+        function ejecutarForDiezAlUno(inicio, fin) {
+            var valor1 = inicio;
+            var valor2 = fin;
+
+            for (let valor1 = 10; valor1 >= valor2; valor1--) {
+                console.log(valor1);
+            }
+        }
+        ejecutarForDiezAlUno (10,1)
+        
+        // del 2 al 20 de 2 en 2
+        function ejecutarForDosEnDos(inicio, fin, cada) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var valor3 = cada;
+
+            for (let i = valor1; i <= valor2; i = i + valor3) {
+                console.log(i);
+            }
+        }
+        ejecutarForDosEnDos (2,20,2)
+        
+        // del 1 al 19 si son impares
+        function ejecutarForImpares(inicio, fin) {
+            var valor1 = inicio;
+            var valor2 = fin;
+
+            for (let i = valor1; i <= valor2; i++) {
+                if ((i % 2) != 0) {
+                    console.log(i);
+                }
+            }
+        }
+        ejecutarForImpares (1,19)
+
+        // tabla de multiplicar
+        function ejecutarForTablaMultiplicar(inicio, fin, numero) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var valor3 = numero;
+
+            for (let i = valor1; i <= valor2; i++) {
+                let resultado = i * numero;
+                console.log(numero + " x " + i + " = " + resultado);
+            }
+        }
+        ejecutarForTablaMultiplicar (1,10,5)
+        
+        // numeros cuadrados
+        function ejecutarForExponencial(inicio, fin, numero) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var valor3 = numero;
+
+            for (let i = valor1; i <= valor2; i++) {
+                let resultado = i ** numero;
+                console.log(i + " elevado a la " + numero + " = " + resultado);
+            }
+        }
+        ejecutarForExponencial (1,10,2)
+        
+        // doble
+        function ejecutarForDoble(inicio, fin, numero) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var valor3 = numero;
+
+            for (let i = valor1; i <= valor2; i++) {
+                let resultado = i * numero;
+                console.log(i + " - " + resultado);
+            }
+        }
+        ejecutarForDoble (1,10,2)
+        
+        // salto de linea
+        function ejecutarForSaltoLinea(inicio, fin) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var total = "";
+
+            for (let i = valor1; i <= valor2; i++) {
+                if (i == 1) {
+                    total = "Número: " + i;
+                } else {
+                    total = total + ".\n"+ "Número: " + i;
+                }
+            }
+            console.log(total);
+        }
+        ejecutarForSaltoLinea (1,10)
+        
+        // sumar los 10 primeros números
+        function ejecutarForSuma(inicio, fin) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var total = 0;
+            var cadena = "";
+
+            for (let i = valor1; i <= valor2; i++) {
+                total = total + i;
+                if (i == valor1) {
+                    cadena = i;
+                } else {
+                    cadena = cadena + " + " + i;
+                }
+            }
+            console.log(cadena + " = " + total);
+        }
+        ejecutarForSuma (1,10)
+        
+        // imprimir asteriscos
+        function ejecutarForAsterioscoslineal(inicio, fin) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var cadena = "";
+
+            for (let i = valor1; i <= valor2; i++) {
+                cadena = cadena + "*";
+            }
+            console.log(cadena);
+        }
+        ejecutarForAsterioscoslineal (1,10)
+        
+        // imprimir un arreglo
+        function ejecutarForArreglo(arreglo) {
+            const array = arreglo;
+            var valor1 = 0;
+            var valor2 = array.length - 1;
+            var cadena = "";
+
+            for (let i = valor1; i <= valor2; i++) {
+                if (i == 0) {
+                    cadena = array[i];
+                } else {
+                    cadena = cadena + "\n" + array[i];
+                }
+            }
+            console.log(cadena);
+        }
+        ejecutarForArreglo ([1,3,5,7,9])
+        
+        // sumar todos los elementos de un arreglo
+        function ejecutarForSumarArreglo(arreglo) {
+            const array = arreglo;
+            var valor1 = 0;
+            var valor2 = array.length - 1;
+            var total = 0;
+
+            for (let i = valor1; i <= valor2; i++) {
+                total = total + array[i];
+            }
+            console.log(total);
+        }
+        ejecutarForSumarArreglo ([1,2,3,4,5])
+        
+        // número mayor todos los elementos de un arreglo
+        function ejecutarForMayorArreglo(arreglo) {
+            const array = arreglo;
+            var valor1 = 0;
+            var valor2 = array.length - 1;
+            var resultado = 0;
+
+            for (let i = valor1; i <= valor2; i++) {
+                if (array[i] > resultado) {
+                    resultado = array[i];
+                }
+            }
+            console.log(resultado);
+        }
+        ejecutarForMayorArreglo ([1,2,3,4,5])
+        
+        // cuantos son mayores a 10 en todos los elementos de un arreglo
+        function ejecutarForMayorANumeroArreglo(arreglo, mayor) {
+            const array = arreglo;
+            var valor1 = 0;
+            var valor2 = array.length - 1;
+            var valor3 = mayor;
+            var total = 0;
+
+            for (let i = valor1; i <= valor2; i++) {
+                if (array[i] > valor3) {
+                    total ++;
+                }
+            }
+            console.log(total);
+        }
+        ejecutarForMayorANumeroArreglo ([1,2,3,4,5],10)
+
+        // del 3 al 100 de 3 en 3
+        function ejecutarForDosEnDos(inicio, fin, cada) {
+            var valor1 = inicio;
+            var valor2 = fin;
+            var valor3 = cada;
+
+            for (let i = valor1; i <= valor2; i = i + valor3) {
+                console.log(i);
+            }
+        }
+        ejecutarForDosEnDos (3,100,3)
+        
+        // orden inverso de todos los elementos de un arreglo
+        function ejecutarForOrdenInversoArreglo(arreglo) {
+            const array = arreglo;
+            var valor1 = 0;
+            var valor2 = array.length - 1;
+            var resultado = 0;
+
+            for (let i = valor1; i <= valor2; i++) {
+                for (let j = valor1; j < valor2 - i; j++) {
+                    if (array[j] < array[j + 1]) {
+                        let comodin = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = comodin;
+                    }
+                }
+            }
+            console.log(array);
+        }
+        ejecutarForOrdenInversoArreglo ([1,2,3,4,5])
+    </script>
+    <style>
+        .centrar {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            border: none; /* Quita el borde */
+            border-bottom: 2px solid #ccc; /* Agrega un borde inferior */
+            box-shadow: none; /* Quita cualquier sombra predeterminada */
+            outline: none; /* Quita el contorno al hacer clic */
+            padding: 5px;
+            transition: border-bottom-color 0.3s ease;
+            margin-top: 3%;
+        }
+
+        input[type="text"]:focus {
+            border-bottom-color: #007BFF; /* Cambia el color del borde inferior al enfocarse */
+        }
+
+        input[type="text"]::placeholder {
+            color: #aaa; /* Cambia el color del texto del placeholder */
+        }
+    </style>
+</head>
+<body class="centrar">
+    <div>
+        <label>Ejercicio 1 - validar numero mayor</label>
+    </div>
+    <div>
+        <label for="input1">Parámetro 1:</label>
+        <input type="text" id="input1" oninput="verificarYCalcular()"><br><br>
+
+        <label for="input2">Parámetro 2:</label>
+        <input type="text" id="input2" oninput="verificarYCalcular()"><br><br>
+
+        <p id="resultado">Resultado: </p>
+    </div>
+    <div>
+        <label>Ejercicio 2 - if anidado</label>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular automáticamente al ingresar datos</title>
+    <script>
+        function procesarDatos(param1, param2) {
+            let resultado
+            if (param1 > param2){
+                resultado = param1 + " es mayor.";
+            } else if (param1 == param2) {
+                resultado = "Son iguales los dos numeros.";
+            } else {
+                resultado = param2 + " es mayor.";
+            }
+        
+            document.getElementById("resultado").textContent = "Resultado: " + resultado;
+        }
+
+        function verificarYCalcular() {
+            var valor1 = document.getElementById("input1").value;
+            var valor2 = document.getElementById("input2").value;
+
+            // Verificar que ambos campos tengan valor antes de llamar la función
+            if (valor1 !== "" && valor2 !== "") {
+                procesarDatos(valor1, valor2);
+            }
+        }
+    </script>
+    <style>
+        .centrar {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            border: none; /* Quita el borde */
+            border-bottom: 2px solid #ccc; /* Agrega un borde inferior */
+            box-shadow: none; /* Quita cualquier sombra predeterminada */
+            outline: none; /* Quita el contorno al hacer clic */
+            padding: 5px;
+            transition: border-bottom-color 0.3s ease;
+            margin-top: 3%;
+        }
+
+        input[type="text"]:focus {
+            border-bottom-color: #007BFF; /* Cambia el color del borde inferior al enfocarse */
+        }
+
+        input[type="text"]::placeholder {
+            color: #aaa; /* Cambia el color del texto del placeholder */
+        }
+    </style>
+</head>
+<body class="centrar">
+    <div>
+        <label>Ejercicio 1 - validar numero mayor</label>
+    </div>
+    <div>
+        <label for="input1">Parámetro 1:</label>
+        <input type="text" id="input1" oninput="verificarYCalcular()"><br><br>
+
+        <label for="input2">Parámetro 2:</label>
+        <input type="text" id="input2" oninput="verificarYCalcular()"><br><br>
+
+        <p id="resultado">Resultado: </p>
+    </div>
+    <div>
+        <label>Ejercicio 2 - if anidado</label>
+    </div>
+</body>
+</html>
